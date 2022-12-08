@@ -1,0 +1,47 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30px;
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+
+      li {
+        + li {
+          margin-left: 40px;
+        }
+
+        a {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
+
+.rv-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  width: fit-content;
+  min-height: 60px;
+  border: 1px solid #f4c361;
+  border-radius: 100px;
+  background-color: transparent;
+
+  p {
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
