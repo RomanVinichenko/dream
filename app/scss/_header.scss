@@ -4,12 +4,14 @@
   right: 0;
   z-index: 20;
   padding-top: 30px;
+  padding-bottom: 0;
   background-color: transparent;
   transition: all 0.3s;
 }
 
 .header--active {
-  padding-top: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   background-color: rgba(#0d0e12, 0.82);
 }
 
