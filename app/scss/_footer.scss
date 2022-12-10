@@ -75,6 +75,7 @@
   height: 30px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   @include m($lg) {
     display: block;

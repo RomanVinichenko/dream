@@ -35,3 +35,23 @@ more.addEventListener('click', function (){
         el.classList.add("visible");
     })
 })
+
+const burger = document.querySelector(".menu__burger")
+const menuTel = document.querySelector(".menu__tel")
+const footerButton = document.querySelector(".footer__button")
+
+burger.addEventListener('click', function (){
+    menuTel.classList.toggle("menu__tel--active")
+    burger.classList.toggle("menu__burger--close")
+})
+
+footerButton.addEventListener('click', function (){
+    menuTel.classList.toggle("menu__tel--active")
+})
+
+const linkin = document.querySelectorAll(".linkin")
+linkin.forEach(function (removingTel) {
+    removingTel.addEventListener('click', function () {
+        menuTel.classList.remove("menu__tel--active")
+    })
+})

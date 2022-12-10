@@ -33,6 +33,21 @@ body {
   }
 }
 
+.hero__car {
+  display: none;
+  margin: -10% -20% 0 auto;
+  width: 100%;
+
+  @include m($md) {
+    display: block;
+  }
+
+  @include m($sm) {
+    display: block;
+    transform: scale(1.2);
+  }
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -55,10 +70,50 @@ body {
   &::after {
     content: url("../images/car.png");
     position: absolute;
-    right: -7%;
+    right: 8%;
     top: 50%;
     z-index: 2;
+    width: fit-content;
     transform: translateY(-50%);
+
+    @include m(2400) {
+      right: 2%;
+    }
+
+    @include m(2000) {
+      right: -6%;
+    }
+
+    @include m(2000) {
+      right: -15%;
+    }
+
+    @include m(1500) {
+      right: -25%;
+    }
+
+    @include m(1270) {
+      right: -40%;
+    }
+
+    @include m(1230) {
+      bottom: 21%;
+      z-index: 1;
+    }
+
+    @include m($lg) {
+      right: 8%;
+      bottom: -12%;
+      max-width: 70%;
+    }
+
+    @include m($md) {
+      display: none;
+    }
+
+    @include h(860) {
+      bottom: 5%;
+    }
   }
 
   .reserve {
@@ -76,6 +131,10 @@ body {
       height: 480px;
       background-color: #939393;
       filter: blur(500px);
+
+      @include m($lg) {
+        display: none;
+      }
     }
 
     &::after {
@@ -103,7 +162,9 @@ body {
 
     h1 {
       position: relative;
+      z-index: 4;
       margin-bottom: 41px;
+      max-width: 600px;
       font-weight: 800;
       font-size: 96px;
       line-height: 1;
@@ -114,14 +175,82 @@ body {
       &::after {
         content: url("../images/hero-rocket.png");
         position: absolute;
-        right: -20%;
-        top: -73%;
+        right: -45%;
+        top: -81%;
+        z-index: 1;
+
+        @include m(1400) {
+          right: -33%;
+          top: auto;
+          bottom: 0;
+          transform: scale(0.75);
+        }
+
+        @include m(1270) {
+          right: -24%;
+          bottom: -11%;
+        }
+
+        @include m(1230) {
+          display: none;
+        }
       }
 
       span {
+        position: relative;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 1px #f4c361;
         color: #f4c361;
+
+        &::after {
+          content: url("../images/rocket2.png");
+          position: absolute;
+          right: -50%;
+          top: -40%;
+          z-index: 1;
+          display: none;
+
+          @include m(1230) {
+            right: -56%;
+            top: -61%;
+            display: block;
+          }
+
+          @include m($md) {
+            right: -68%;
+            top: -91%;
+            transform: scale(0.7);
+          }
+        }
+      }
+
+      @include m(1400) {
+        margin-bottom: 30px;
+        font-size: 86px;
+      }
+
+      @include m(1270) {
+        font-size: 76px;
+      }
+
+      @include m(1230) {
+        max-width: 70%;
+        font-size: 66px;
+      }
+
+      @include m($lg) {
+        margin: 0 auto 30px;
+        font-size: 56px;
+        text-align: center;
+      }
+
+      @include m($md) {
+        max-width: 80%;
+        font-size: 43px;
+      }
+
+      @include m($sm) {
+        max-width: 100%;
       }
     }
 
@@ -147,10 +276,55 @@ body {
       span {
         font-weight: 700;
       }
+
+      @include m(1400) {
+        padding-left: 40px;
+        max-width: 450px;
+      }
+
+      @include m(1270) {
+        margin-bottom: 30px;
+      }
+
+      @include m(1230) {
+        max-width: 80%;
+      }
+
+      @include m($lg) {
+        max-width: 100%;
+        font-size: 18px;
+      }
+
+      @include m($md) {
+        padding-left: 30px;
+        font-size: 16px;
+      }
     }
 
     .about__button {
+      z-index: 5;
       margin: 0 auto 0 0 !important;
+
+      @include m($lg) {
+        margin: 0 auto !important;
+      }
+
+      @include m($md) {
+        padding: 0 30px 5px;
+      }
+    }
+
+    @include m(1230) {
+      justify-content: flex-start;
+      padding-top: 200px;
+    }
+
+    @include m($lg) {
+      padding-top: 150px;
+    }
+
+    @include m($md) {
+      padding-top: 115px;
     }
   }
 }
@@ -325,6 +499,10 @@ h2 {
 
   @include m(1400) {
     padding: 80px 0;
+  }
+
+  @include m($md) {
+    padding: 80px 0 20px;
   }
 }
 
@@ -960,6 +1138,10 @@ h2 {
       padding: 0 20px;
       width: fit-content;
     }
+  }
+
+  @include m($md) {
+    padding: 80px 0 20px;
   }
 }
 
