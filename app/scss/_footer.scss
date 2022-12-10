@@ -1,4 +1,82 @@
 .footer {
   position: relative;
   padding: 30px 0;
+
+  .logo {
+    img {
+      @include m(1500) {
+        max-width: 200px;
+      }
+
+      @include m(1270) {
+        max-width: 170px;
+      }
+
+      @include m($lg) {
+        max-width: 213px;
+      }
+    }
+  }
+
+  .menu {
+    ul {
+      li {
+        + li {
+          @include m(1270) {
+            margin-left: 25px;
+          }
+
+          @include m(1180) {
+            margin-left: 20px;
+          }
+        }
+
+        a {
+          @include m(1180) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      @include m(1180) {
+        margin-right: 30px;
+      }
+
+      @include m(1100) {
+        margin-right: 20px;
+      }
+
+      @include m($lg) {
+        display: none;
+      }
+    }
+
+    .rv-button {
+      @include m(1180) {
+        padding: 0 30px;
+      }
+
+      @include m(1100) {
+        padding: 0 20px;
+      }
+
+      @include m($lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer__button {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+
+  @include m($lg) {
+    display: block;
+  }
 }

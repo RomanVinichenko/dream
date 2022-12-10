@@ -23,3 +23,15 @@ $(".menu a").on("click", function () {
 
     return false;
 });
+
+const more = document.querySelector(".more")
+const wrap = document.querySelector(".what__wrapper")
+const hide = document.querySelectorAll(".hide")
+
+more.addEventListener('click', function (){
+    more.classList.add("nomore");
+    wrap.classList.add("what__wrapper-active");
+    hide.forEach(el => {
+        el.classList.add("visible");
+    })
+})

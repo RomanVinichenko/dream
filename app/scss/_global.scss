@@ -27,6 +27,10 @@ body {
   margin: 0 auto;
   padding: 0 40px;
   max-width: 1480px;
+
+  @include m($md) {
+    padding: 0 30px;
+  }
 }
 
 .hero {
@@ -162,6 +166,18 @@ h2 {
   span {
     color: #f4c361;
   }
+
+  @include m(1400) {
+    font-size: 48px;
+  }
+
+  @include m($lg) {
+    font-size: 42px;
+  }
+
+  @include m($md) {
+    font-size: 24px;
+  }
 }
 
 .rv-list {
@@ -174,7 +190,7 @@ h2 {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 108px 58px 0;
+    padding: 108px 50px 0;
     height: 265px;
     overflow: hidden;
     border-radius: 50px;
@@ -202,16 +218,58 @@ h2 {
       background-color: #f6dc83;
       filter: blur(50px);
       transform: translateX(-50%);
+
+      @include m($lg) {
+        bottom: -115%;
+      }
+    }
+
+    @include m(1400) {
+      padding: 108px 38px 60px;
+    }
+
+    @include m(1250) {
+      height: 300px;
+    }
+
+    @include m($lg) {
+      padding: 80px 30px 38px;
+      height: auto;
     }
   }
 
   li {
     position: relative;
 
+    &:first-of-type {
+      .benefits__box {
+        p {
+          max-width: 80%;
+
+          @include m(1200) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
     p {
-      z-index: 4;
+      z-index: 6;
       font-weight: 500;
       text-align: center;
+
+      @include m(1400) {
+        font-size: 22px;
+      }
+
+      @include m($lg) {
+        max-width: 50%;
+      }
+
+      @include m($md) {
+        max-width: 90%;
+        font-size: 16px;
+      }
     }
 
     img {
@@ -220,7 +278,17 @@ h2 {
       top: -52%;
       z-index: 5;
       transform: translateX(-50%);
+
+      @include m($lg) {
+        top: -42%;
+        max-width: 160px;
+      }
     }
+  }
+
+  @include m($lg) {
+    grid-gap: 88px 0;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -245,6 +313,18 @@ h2 {
 
   h2 {
     margin-bottom: 162px;
+
+    @include m(1400) {
+      margin-bottom: 142px;
+    }
+
+    @include m($lg) {
+      margin-bottom: 88px;
+    }
+  }
+
+  @include m(1400) {
+    padding: 80px 0;
   }
 }
 
@@ -280,6 +360,23 @@ h2 {
       z-index: -11;
       border-radius: 42px;
       background-image: linear-gradient(90deg, #c4c5c7 0%, #f8f8f8 17.71%, #fff 100%);
+
+      @include m($lg) {
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        border-radius: 22px;
+      }
+    }
+
+    @include m(1250) {
+      padding: 30px 0 50px;
+    }
+
+    @include m($lg) {
+      padding: 20px 0 50px;
+      border-radius: 25px;
     }
   }
 
@@ -294,8 +391,23 @@ h2 {
 
   &__text {
     margin: 0 auto 70px;
+    padding: 0 20px;
     text-align: center;
     color: #636363;
+
+    @include m(1250) {
+      margin: 0 auto 50px;
+      font-size: 22px;
+    }
+
+    @include m($lg) {
+      margin: 0 auto 35px;
+      font-size: 18px;
+    }
+
+    @include m($md) {
+      font-size: 16px;
+    }
   }
 
   &__inner {
@@ -303,6 +415,11 @@ h2 {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    padding: 0 30px;
+
+    @include m($lg) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__descr {
@@ -316,6 +433,16 @@ h2 {
       padding: 30px 60px 0 40px;
       font-weight: 500;
       color: #0d0e12;
+
+      @include m(1250) {
+        padding: 30px 30px 0;
+      }
+
+      @include m($lg) {
+        padding: 15px 28px 0;
+        font-size: 18px;
+        text-align: center;
+      }
     }
 
     p {
@@ -325,11 +452,42 @@ h2 {
 
       &:not(:first-of-type) {
         margin-top: 28px;
+
+        @include m($xl) {
+          margin-top: 20px;
+        }
+
+        @include m($lg) {
+          margin-top: 10px;
+        }
       }
 
       span {
         font-weight: 600;
       }
+
+      @include m(1250) {
+        padding: 0 30px;
+      }
+
+      @include m($lg) {
+        padding: 0 28px;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+
+    @include m(1400) {
+      margin-right: 50px;
+    }
+
+    @include m($xl) {
+      margin-right: 40px;
+    }
+
+    @include m($lg) {
+      margin-right: 0;
+      max-width: 100%;
     }
   }
 
@@ -360,6 +518,23 @@ h2 {
       top: -85%;
       z-index: -1;
       transform: scale(0.58);
+
+      @include m(1250) {
+        right: -18%;
+        top: -78%;
+        transform: scale(0.48);
+      }
+
+      @include m($xl) {
+        right: -22%;
+        top: -66%;
+      }
+
+      @include m($lg) {
+        right: -182px;
+        top: -166px;
+        transform: scale(0.38);
+      }
     }
 
     h3 {
@@ -369,11 +544,26 @@ h2 {
       font-size: 24px;
       text-transform: uppercase;
       color: #fff;
+
+      @include m(1250) {
+        padding: 0 30px;
+      }
+
+      @include m($lg) {
+        padding: 0 28px;
+        font-size: 20px;
+        text-align: center;
+      }
     }
 
     p {
       font-size: 20px;
       color: #fff;
+
+      @include m($lg) {
+        font-size: 18px;
+        text-align: center;
+      }
     }
   }
 
@@ -395,6 +585,19 @@ h2 {
       &:not(:first-of-type) {
         margin-top: 40px;
       }
+
+      @include m(1400) {
+        font-size: 42px;
+      }
+
+      @include m($lg) {
+        font-size: 34px;
+        text-align: center;
+      }
+
+      @include m($md) {
+        font-size: 28px;
+      }
     }
 
     p {
@@ -402,6 +605,16 @@ h2 {
       font-size: 16px;
       text-transform: uppercase;
       color: #545454;
+
+      @include m($lg) {
+        text-align: center;
+      }
+    }
+
+    @include m($lg) {
+      margin-bottom: 40px;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -431,6 +644,10 @@ h2 {
       height: 100px;
       border-radius: 100px;
       background-image: linear-gradient(155deg, #fff 0%, #f4c361 33.33%, rgba(#c9a04e, 1) 66.67%, #c9a04e 100%);
+
+      @include m($xl) {
+        height: 80px;
+      }
     }
 
     &::after {
@@ -445,6 +662,10 @@ h2 {
       height: 92px;
       border-radius: 100px;
       background-image: radial-gradient(90.5% 90.5% at 50% 26.5%, #f4c361 0%, #c9a04e 100%);
+
+      @include m($xl) {
+        height: 72px;
+      }
     }
 
     img {
@@ -453,6 +674,30 @@ h2 {
       border-radius: 100px;
       text-align: center;
     }
+
+    @include m($xl) {
+      padding: 0 60px 5px;
+      min-height: 80px;
+      font-size: 22px;
+    }
+
+    @include m(1250) {
+      margin: 60px auto 0;
+    }
+
+    @include m($lg) {
+      padding: 0 30px 5px;
+      font-size: 20px;
+    }
+
+    @include m($md) {
+      padding: 0 15px 5px;
+      font-size: 18px;
+    }
+  }
+
+  @include m($lg) {
+    padding: 80px 0 50px;
   }
 }
 
@@ -467,18 +712,69 @@ h2 {
     margin: 0 auto 51px;
     max-width: 652px;
     text-align: center;
+
+    @include m($xl) {
+      font-size: 22px;
+    }
+
+    @include m($md) {
+      font-size: 18px;
+    }
+
+    @include m($sm) {
+      font-size: 16px;
+    }
   }
 
   &__decor {
     left: 28% !important;
     top: 21% !important;
     transform: none !important;
+
+    @include m(1300) {
+      top: 31% !important;
+    }
+
+    @include m($lg) {
+      left: auto !important;
+      right: -10% !important;
+      top: 16% !important;
+      max-width: 252px !important;
+    }
+
+    @include m($md) {
+      right: -16% !important;
+    }
+
+    @include m(544) {
+      right: -21% !important;
+    }
+
+    @include m(416) {
+      right: -25% !important;
+    }
+
+    @include m(372) {
+      right: -29% !important;
+    }
   }
 
   &__decor-second {
     left: 25% !important;
     top: 43% !important;
     transform: none !important;
+
+    @include m(1300) {
+      left: 13% !important;
+      top: 52% !important;
+    }
+
+    @include m($lg) {
+      left: auto !important;
+      right: -2% !important;
+      top: 43% !important;
+      max-width: 200px !important;
+    }
   }
 
   &__number {
@@ -486,12 +782,52 @@ h2 {
     right: 0 !important;
     top: 32% !important;
     z-index: 2 !important;
+    width: 100% !important;
+    max-width: 200px !important;
+
+    @include m($lg) {
+      left: auto !important;
+      right: -15% !important;
+      top: 23% !important;
+    }
   }
 
   .rv-list {
+    li {
+      p {
+        @include m(1300) {
+          font-size: 20px;
+        }
+      }
+
+      &:last-of-type {
+        .benefits__box {
+          @include m($lg) {
+            padding: 85px 30px 140px;
+          }
+
+          @include m($sm) {
+            height: 350px;
+          }
+        }
+      }
+    }
+
     .about__button {
       position: absolute;
       margin: 120px auto 0;
+
+      @include m(1300) {
+        margin: 140px auto 0;
+      }
+
+      @include m($lg) {
+        margin: 80px auto 30px;
+      }
+
+      @include m($sm) {
+        margin: 130px auto 30px;
+      }
     }
 
     .benefits__box {
@@ -501,6 +837,23 @@ h2 {
       &::after {
         left: 85%;
         bottom: -40%;
+
+        @include m($lg) {
+          bottom: -82%;
+        }
+      }
+
+      @include m(1300) {
+        height: 380px;
+      }
+
+      @include m($lg) {
+        padding: 85px 30px 100px;
+        height: auto;
+      }
+
+      @include m($md) {
+        padding: 85px 30px 130px;
       }
     }
 
@@ -511,6 +864,30 @@ h2 {
           font-size: 24px;
         }
       }
+
+      .benefits__box {
+        @include m($sm) {
+          height: 400px;
+        }
+      }
+
+      .about__button {
+        @include m($lg) {
+          padding: 0 50px 5px;
+        }
+
+        @include m($sm) {
+          margin: 150px auto 30px;
+        }
+      }
+    }
+
+    @include m(1300) {
+      grid-gap: 0 30px;
+    }
+
+    @include m($lg) {
+      grid-gap: 40px 0;
     }
   }
 
@@ -531,13 +908,32 @@ h2 {
 
     p {
       margin-right: 4px;
+      max-width: 100% !important;
       font-weight: 600 !important;
       text-transform: uppercase;
+
+      @include m($xl) {
+        font-size: 22px;
+      }
     }
 
     span {
       padding-bottom: 5px;
       font-size: 29px;
+    }
+
+    @include m(1300) {
+      width: 240px;
+    }
+
+    @include m($xl) {
+      width: 200px;
+      height: 60px;
+    }
+
+    @include m($lg) {
+      padding: 0 20px;
+      width: fit-content;
     }
   }
 }
@@ -547,27 +943,74 @@ h2 {
 
   h2 {
     margin-bottom: 60px;
+
+    @include m($md) {
+      margin-bottom: 40px;
+    }
   }
 
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    display: grid;
+    grid-gap: 0 40px;
+    grid-template-columns: 1fr 1fr;
+    transition: all 0.5s;
+
+    .nomore {
+      opacity: 0;
+    }
+
+    @include m($lg) {
+      grid-gap: 40px 0;
+      grid-template-columns: 1fr;
+    }
+
+    @include m($md) {
+      height: 200px;
+      overflow: hidden;
+      transition: all 0.5s;
+    }
+
+    @include m($sm) {
+      height: 300px;
+    }
+  }
+
+  &__wrapper-active {
+    height: 100%;
   }
 
   &__part {
     max-width: 560px;
 
     p {
+      position: relative;
       font-size: 16px;
 
       &:not(:last-child) {
         margin-bottom: 22px;
+
+        @include m($xl) {
+          margin-bottom: 15px;
+        }
       }
 
       span {
         font-weight: 600;
       }
     }
+
+    @include m($lg) {
+      max-width: 100%;
+    }
+  }
+
+  @include m($lg) {
+    padding: 80px 0 60px;
+  }
+
+  @include m($md) {
+    padding: 80px 0 40px;
   }
 }
 
@@ -582,7 +1025,7 @@ h2 {
   &__box {
     display: flex;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 20px;
 
     &:last-of-type {
       margin-top: 20px;
@@ -591,6 +1034,10 @@ h2 {
 
     img {
       margin-right: 20px;
+
+      @include m(1400) {
+        margin-right: 10px;
+      }
     }
 
     span {
@@ -599,6 +1046,10 @@ h2 {
       font-size: 16px;
       line-height: 140%;
       color: #000;
+    }
+
+    @include m(1400) {
+      padding: 0;
     }
   }
 
@@ -641,6 +1092,10 @@ h2 {
           line-height: 1.4;
           text-align: center;
           color: #fff;
+
+          @include m(1400) {
+            font-size: 20px;
+          }
         }
 
         h6 {
@@ -688,6 +1143,16 @@ h2 {
         text-align: center;
         text-transform: uppercase;
         color: #0d0e12;
+
+        @include m(1400) {
+          margin-bottom: 30px;
+          padding-bottom: 30px;
+          font-size: 28px;
+        }
+
+        @include m($xl) {
+          font-size: 24px;
+        }
       }
 
       p {
@@ -698,6 +1163,14 @@ h2 {
 
         span {
           font-weight: 700;
+        }
+
+        @include m(1400) {
+          margin-bottom: 30px;
+        }
+
+        @include m($xl) {
+          margin-bottom: 20px;
         }
       }
 
@@ -726,12 +1199,29 @@ h2 {
 
       .about__button {
         margin: 0 0 45px !important;
-        padding: 0 50px 5px !important;
+        padding: 0 20px 5px !important;
         width: 100%;
         font-weight: 700;
         font-size: 20px;
         line-height: 1.4;
         color: #6b521e;
+
+        @include m(1400) {
+          min-height: 80px;
+          font-size: 18px;
+
+          &::before {
+            height: 80px;
+          }
+
+          &::after {
+            height: 72px;
+          }
+        }
+
+        @include m($xl) {
+          font-size: 16px;
+        }
       }
 
       &:first-of-type,
@@ -751,7 +1241,24 @@ h2 {
           border-radius: 47px;
           background-image: linear-gradient(90deg, #c4c5c7 0%, #f8f8f8 17.71%, #fff 100%);
         }
+
+        @include m(1400) {
+          padding: 120px 25px 0;
+        }
+
+        @include m($xl) {
+          padding: 90px 20px 0;
+        }
       }
+    }
+
+    @include m($lg) {
+      grid-gap: 40px 0;
+      grid-template-columns: 1fr;
+    }
+
+    @include m(1400) {
+      grid-gap: 30px;
     }
   }
 
@@ -764,7 +1271,7 @@ h2 {
     justify-content: center;
     width: 100%;
     height: 80px;
-    max-width: 340px;
+    max-width: 300px;
     border-radius: 0 0 25px 25px;
     background-image: linear-gradient(180deg, #eb5554 0%, #d32c2b 100%);
     transform: translateX(-50%);
@@ -777,6 +1284,71 @@ h2 {
       text-align: center;
       text-transform: uppercase;
       color: #fff;
+
+      @include m(1400) {
+        font-size: 28px;
+      }
+
+      @include m($xl) {
+        font-size: 22px;
+      }
+
+      @include m($lg) {
+        font-size: 18px;
+      }
+    }
+
+    @include m(1400) {
+      padding: 0 40px;
+      width: fit-content;
+      height: 60px;
     }
   }
+
+  @include m($lg) {
+    padding: 70px 0 40px;
+  }
+}
+
+.more {
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: rgba(#fff, 0.5);
+  transform: translateX(-50%);
+  cursor: pointer;
+
+  &::after {
+    content: url("../images/plus.svg");
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include m($md) {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.hide {
+  transition: all 0.5s;
+
+  @include m($md) {
+    opacity: 0;
+  }
+}
+
+.visible {
+  opacity: 1;
 }
