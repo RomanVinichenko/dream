@@ -420,6 +420,10 @@ h2 {
     @include m($lg) {
       flex-direction: column-reverse;
     }
+
+    @include m($md) {
+      padding: 0 20px;
+    }
   }
 
   &__descr {
@@ -442,6 +446,10 @@ h2 {
         padding: 15px 28px 0;
         font-size: 18px;
         text-align: center;
+      }
+
+      @include m($md) {
+        padding: 15px 18px 0;
       }
     }
 
@@ -474,6 +482,10 @@ h2 {
         padding: 0 28px;
         font-size: 16px;
         text-align: center;
+      }
+
+      @include m($md) {
+        padding: 0 18px;
       }
     }
 
@@ -509,6 +521,13 @@ h2 {
       z-index: -2;
       border: 1px dashed #fff;
       border-radius: 5px;
+
+      @include m($md) {
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+      }
     }
 
     &::after {
@@ -534,6 +553,12 @@ h2 {
         right: -182px;
         top: -166px;
         transform: scale(0.38);
+      }
+
+      @include m($sm) {
+        right: -196px;
+        top: -186px;
+        transform: scale(0.3);
       }
     }
 
@@ -1095,6 +1120,10 @@ h2 {
 
           @include m(1400) {
             font-size: 20px;
+          }
+
+          @include m($md) {
+            margin-bottom: 40px;
           }
         }
 
