@@ -175,13 +175,23 @@ body {
       &::after {
         content: url("../images/hero-rocket.png");
         position: absolute;
-        left: 39%;
-        top: -63%;
+        left: 57%;
+        top: -40%;
         z-index: 1;
         transform: scale(0.6);
 
+        @include m(1600) {
+          left: 49%;
+          top: -51%;
+        }
+
+        @include m(1600) {
+          left: 41%;
+          top: -67%;
+        }
+
         @include m(1400) {
-          left: 39%;
+          left: 42%;
         }
 
         @include m(1270) {
@@ -203,14 +213,12 @@ body {
         &::after {
           content: url("../images/rocket2.png");
           position: absolute;
-          right: -50%;
-          top: -40%;
+          right: -51%;
+          top: -48%;
           z-index: 1;
           display: none;
 
           @include m(1230) {
-            right: -56%;
-            top: -61%;
             display: block;
           }
 
