@@ -47,6 +47,7 @@ burger.addEventListener('click', function (){
 
 footerButton.addEventListener('click', function (){
     menuTel.classList.toggle("menu__tel--active")
+    burger.classList.toggle("menu__burger--close")
 })
 
 const linkin = document.querySelectorAll(".linkin")
