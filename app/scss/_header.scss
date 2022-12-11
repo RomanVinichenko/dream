@@ -164,6 +164,10 @@
       max-width: 170px;
     }
   }
+
+  @include m($lg) {
+    padding-top: 20px;
+  }
 }
 
 .menu__burger {
@@ -220,8 +224,8 @@
   background-color: rgba(#0d0e12, 0.82);
 
   @include m($lg) {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
